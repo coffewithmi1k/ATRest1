@@ -13,6 +13,6 @@ public class ConfigControllers {
     String signIn ="/oauth/token";
     String confirmLineUp ="/users/me/team/players";
     Response response;
-    RequestSpecification request = RestAssured.given();
+    //RequestSpecification request = RestAssured.given();
     ValidatableResponse json;
 }
