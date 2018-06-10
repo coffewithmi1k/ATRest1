@@ -1,0 +1,20 @@
+{
+  "bench": {
+    "defender": "p100180",
+    "forward": "p103955",
+    "goalKeeper": "p121160",
+    "midfielder": "p41823"
+  },
+  "captain": "p97299",
+  "defenders": [
+    "p57410","p97299","p58621","p17476"
+  ],
+  "forwards": [
+    "p37572","p205651"
+  ],
+  "goalKeeper": "p33148",
+  "midfielders": [
+    "p61366","p27789","p20664","p182156"
+  ],
+  "viceCaptain": "p20664"
+}

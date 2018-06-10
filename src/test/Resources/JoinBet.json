@@ -1,0 +1,10 @@
+{
+ "commonBetRequests": [
+{
+   "currency":"BET_COIN",
+   "bet": 50,
+   "betId": 8937,
+   "confirmBetActionType": "JOIN_TO_BET"
+ }
+]
+}

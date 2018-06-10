@@ -1,0 +1,12 @@
+{
+ "commonBetRequests": [
+ 
+{
+  "currency":"BET_COIN",
+   "bet": 50,
+   "confirmBetActionType": "CREATE_RANDOM"
+   
+ }
+
+]
+}
