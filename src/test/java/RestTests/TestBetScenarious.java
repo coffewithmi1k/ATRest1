@@ -21,7 +21,7 @@ public class TestBetScenarious {
     String token1 = "";
     String token2 = "";
     String token3 = "";
-    String idRandomBet ="";
+    int idRandomBet;
 
     @Story("Random Flow checks")
     @Test
@@ -30,7 +30,7 @@ public void checkbetRandomCreationJoin(){
     token2 = userCon.signIn(email2,password2);
     userCon.checkConfirmLineUp(token1);
     userCon.checkConfirmLineUp(token2);
-    betCon.createBetRandom(token1);
+    idRandomBet= betCon.createBetRandom(token1);
     betCon.joinRandomBet(token2,idRandomBet);
 }
 }

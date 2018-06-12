@@ -10,8 +10,8 @@ import java.io.File;
 public class UserController extends ConfigControllers {
 
     String token = "";
-    File LeicesterCityFormationJson = new File("E:\\IntelijIdea\\ATRest1\\src\\test\\Resources\\ConfirmLineUp.json");
-    File manchesterCityFormationJson = new File("E:\\IntelijIdea\\ATRest1\\src\\test\\Resources\\ConfirmLineUpManchesterCity.json");
+    File LeicesterCityFormationJson = new File("src\\test\\Resources\\ConfirmLineUp.json");
+    File manchesterCityFormationJson = new File("src\\test\\Resources\\ConfirmLineUpManchesterCity.json");
 
     @Step("User is logged In")
     public String signIn(String email, String password) {
