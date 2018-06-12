@@ -36,9 +36,20 @@ public class BetController extends ConfigControllers {
         response = RestAssured.given()
                         .headers("Authorization", "bearer " + token,
                                 "Content-Type", "application/json")
-                .body(bodyJoinBetJson)
+                .body("{\n" +
+                        " \"commonBetRequests\": [\n" +
+                        "{\n" +
+                        "   \"currency\":\"BET_COIN\",\n" +
+                        "   \"bet\": 50,\n" +
+                        "   \"betId\":"+betId+",\n" +
+                        "   \"confirmBetActionType\": \"JOIN_TO_BET\"\n" +
+                        " }\n" +
+                        "]\n" +
+                        "}")
                 .when().post(urlDev+manageBets).then()
-                .log().all().extract().response();
+                .log().all()
+                .extract().response();
+        response.then().statusCode(201).body("commonBetRequests.betId[0]", equalTo(betId));
 
 
     }

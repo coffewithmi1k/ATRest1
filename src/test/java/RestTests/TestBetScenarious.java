@@ -28,8 +28,8 @@ public class TestBetScenarious {
 public void checkbetRandomCreationJoin(){
     token1 = userCon.signIn(email1,password1);
     token2 = userCon.signIn(email2,password2);
-    userCon.checkConfirmLineUp(token1);
-    userCon.checkConfirmLineUp(token2);
+   // userCon.checkConfirmLineUp(token1);
+   // userCon.checkConfirmLineUp(token2);
     idRandomBet= betCon.createBetRandom(token1);
     betCon.joinRandomBet(token2,idRandomBet);
 }
