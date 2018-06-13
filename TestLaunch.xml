@@ -3,7 +3,7 @@
 <suite name="MyDefaultSuite">
   <test name="ATRest1">
     <classes>
-      <class name="RestTests.TestBetScenarious">
+      <class name="RestTests.TestUserController">
 <methods>
 
 </methods>
