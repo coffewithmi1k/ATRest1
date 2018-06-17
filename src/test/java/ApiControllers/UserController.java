@@ -13,7 +13,7 @@ public class UserController extends ConfigControllers {
     File LeicesterCityFormationJson = new File("src\\test\\Resources\\ConfirmLineUp.json");
     File manchesterCityFormationJson = new File("src\\test\\Resources\\ConfirmLineUpManchesterCity.json");
 
-    @Step("User is logged In")
+    @Step("Sign In")
     public String signIn(String email, String password) {
         response = RestAssured.given()
                 .queryParam("grant_type", "password")
@@ -30,7 +30,7 @@ public class UserController extends ConfigControllers {
 
     }
 
-    @Step("User confirms his line-up without MatchDay")
+    @Step("Confirm Line Up without Match day")
     public void checkConfirmLineUpWithoutMatchDay(String myToken) {
 
         response = RestAssured.given()
@@ -40,21 +40,8 @@ public class UserController extends ConfigControllers {
                 .body(LeicesterCityFormationJson).when().post(urlDev + confirmLineUp)
                 .then().log().all().extract().response();
         response.then().statusCode(404).body("status", equalTo(404));
-       /* response =
-                request
-                        .queryParam("formation", "FOUR_FOUR_TWO")
-                        .headers("Authorization", "bearer "+myToken,
-                                "Content-Type", "application/json")
-                        .body(LeicesterCityFormationJson)
-                        .when()
-                        .post(urlDev + "/users/me/team/players")
-                        .then().log().all().extract().response();
-
-                //.body("",equalTo("")) */
     }
-
-
-    @Step("User confirms his line-up")
+    @Step("Set Line-up")
     public void checkConfirmLineUp(String myToken) {
 
         response = RestAssured.given()
