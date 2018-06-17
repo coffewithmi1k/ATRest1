@@ -9,8 +9,6 @@ import org.testng.annotations.Test;
 import javax.json.Json;
 import javax.json.JsonObject;
 
-import static RestTests.TestExampleBets.jSonExam.createRandomBetJson;
-
 
 public class TestExampleBets extends ConfigControllers {
    ExampleController exampleManagement = new ExampleController();
@@ -25,16 +23,14 @@ public class TestExampleBets extends ConfigControllers {
                             .add("betId", "11573")
                             .add("confirmBetActionType", "JOIN_TO_BET"))).build();
 */
-public interface jSonExam
 
-    {
         JsonObject createRandomBetJson = Json.createObjectBuilder()
                 .add("commonBetRequests", Json.createArrayBuilder()
                         .add(Json.createObjectBuilder()
                                 .add("currency", "BET_COIN")
                                 .add("bet", "100")
                                 .add("confirmBetActionType", "CREATE_RANDOM"))).build();
-    }
+
 
 
 @Story("New Flow")
