@@ -7,7 +7,7 @@ import io.restassured.RestAssured;
 
 import java.io.File;
 
-public class UserController extends ConfigControllers {
+public class User extends ConfigControllers {
 
     String token = "";
     File LeicesterCityFormationJson = new File("src\\test\\Resources\\ConfirmLineUp.json");
@@ -61,5 +61,42 @@ public class UserController extends ConfigControllers {
         }
         response.then().statusCode(200).body("betCount", equalTo(0));
     }
+
+    @Step("User Info")
+    public void checkUserInfo(String token){
+
+    }
+
+    @Step("get Users activity")
+    public void getUserActivity(String token){
+
+    }
+
+    @Step("Perform line-up clear")
+    public void checkClearLineUp(String token){
+
+    }
+
+    @Step("Show friends list")
+    public void checkFriendsList(String token){
+
+    }
+    @Step("Get latest lineUP")
+    public void getLatestLineUp(String token){
+
+    }
+    @Step("Get current lineUP")
+    public void getCurrentLineUp(String token){
+
+    }
+    @Step("Show user session")
+    public void getUserSession(String token){
+
+    }
+    @Step("Get User's wallet")
+    public void getUserWallet(String token){
+
+    }
+
 
 }

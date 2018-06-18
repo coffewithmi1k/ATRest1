@@ -2,12 +2,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="MyDefaultSuite">
   <test name="ATRest1">
+      <packages>
+          <package name="RestTests"></package>
+      </packages>
     <classes>
-      <class name="RestTests.TestBetScenarious">
-<methods>
 
-</methods>
-      </class> <!-- ApiControllers.UserController -->
     </classes>
   </test> <!-- ATRest1 -->
 </suite> <!-- Default Suite -->

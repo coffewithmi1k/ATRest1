@@ -6,24 +6,24 @@ import io.restassured.response.ValidatableResponse;
 
 
 public class ConfigControllers {
-    Response response;
-    ValidatableResponse json;
+    public Response response;
+    public    ValidatableResponse json;
 
     //User Controller Endpoints
-    String urlDev = "http://46.101.196.83/api";
-    String signIn = "/oauth/token";
-    String postConfirmRegistration ="/users/confirm-registration";
-    String postConfirmResendEmail ="/users/confirm/resend";
-    String confirmLineUp = "/users/me/team/players";
-    String postUserActivity = "/users/me/activity";
-    String getUserBillingInfo = "/users/me/billing-info";
-    String postSaveBillingInfo = "/users/me/billing-info";
-    String postChangeName = "/users/me/change-name";
-    String clearLineUp = "/users/me/clear-lineup";
-    String putDisableUser ="";
+    public String urlDev = "http://46.101.196.83/api";
+    public String signIn = "/oauth/token";
+    public String postConfirmRegistration = "/users/confirm-registration";
+    public String postConfirmResendEmail = "/users/confirm/resend";
+    public String confirmLineUp = "/users/me/team/players";
+    public String postUserActivity = "/users/me/activity";
+    public String getUserBillingInfo = "/users/me/billing-info";
+    public String postSaveBillingInfo = "/users/me/billing-info";
+    public String postChangeName = "/users/me/change-name";
+    public String clearLineUp = "/users/me/clear-lineup";
+    public String putDisableUser = "";
 
 
     //Bet Controllers
-    String manageBets="/bets/confirm"; //for create betFriend, random, group , and join;
+    public  String manageBets = "/bets/confirm"; //for create betFriend, random, group , and join;
 
 }

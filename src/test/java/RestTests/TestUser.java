@@ -1,6 +1,6 @@
 package RestTests;
 
-import ApiControllers.UserController;
+import ApiControllers.User;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
@@ -8,8 +8,8 @@ import io.qameta.allure.Story;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-@Epic("User TestsEpic")
-public class TestUserController {
+@Epic("User Controller tests")
+public class TestUser {
 
   /*  @BeforeClass
             public void logConfig() {
@@ -17,7 +17,7 @@ public class TestUserController {
         PropertyConfigurator.configure(log4jConfPath);
     }*/
 
-    UserController userCon = new UserController();
+    User userCon = new User();
     String token ="";
     String email = "coffe90@mailinator.com";
     String password = "Qwe1156q@@";
@@ -27,13 +27,13 @@ public class TestUserController {
         token= userCon.signIn("coffe91@mailinator.com", "Qwe1156q@@");
         System.out.println("This is Before all method"); }
 
-    @Story("Smoke Tests")
-    @Test()
+    @Story("Regression")
+    @Test(description = "Check sign in request")
     public void sign() {
         userCon.signIn(email,password); }
 
-    @Story("Smoke Tests")
-    @Test()
+    @Story("Regression")
+    @Test(description = "check line-up confirmation")
     public void checkConfirmLineUp() {
       userCon.checkConfirmLineUp(token); }
 

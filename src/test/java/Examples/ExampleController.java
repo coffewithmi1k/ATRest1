@@ -1,5 +1,6 @@
-package ApiControllers;
+package Examples;
 
+import ApiControllers.ConfigControllers;
 import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import javax.json.JsonObject;
