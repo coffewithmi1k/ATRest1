@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class TestExampleBets extends ConfigControllers {
 
-
+User usercontr = new User();
 
  /*   JsonObject joinBetJson = Json.createObjectBuilder()
             .add("commonBetRequests", Json.createArrayBuilder()
@@ -31,7 +31,13 @@ public class TestExampleBets extends ConfigControllers {
 
 }*/
 
-
+public void check100SigIn(){
+    for(int i=1;i<170;i++){
+        String email = "coffe"+i+"@mailinator.com";
+        String password = "Qwe1156q@@";
+        System.out.println("Here you can find token for coffe"+i+"@mailinator.com  "+usercontr.signIn(email,password));
+    }
+}
 
 
 

@@ -18,13 +18,13 @@ public class TestUser {
     }*/
 
     User userCon = new User();
-    String token ="";
+    static String  token ="";
     String email = "coffe90@mailinator.com";
     String password = "Qwe1156q@@";
 
     @BeforeSuite
     public void assignToken(){
-        token= userCon.signIn("coffe91@mailinator.com", "Qwe1156q@@");
+        token= userCon.signIn("coffe59@mailinator.com", "Qwe1156q@@");
         System.out.println("This is Before all method"); }
 
     @Story("Regression")
@@ -37,7 +37,41 @@ public class TestUser {
     public void checkConfirmLineUp() {
       userCon.checkConfirmLineUp(token); }
 
+    @Story("Regression")
+    @Test(description = "check user Info")
+    public void checkUserInfo() {
+        userCon.checkUserInfo(token); }
 
-
-
+    @Story("Regression")
+    @Test(description = "check User Activity")
+    public void checkUserActivity() {
+        userCon.getUserActivity(token); }
+    @Story("Regression")
+    @Test(description = "check Clear Line-up")
+    public void checkClearLineUp() {
+        userCon.checkClearLineUp(token); }
+    @Story("Regression")
+    @Test(description = "check user FriendList")
+    public void checkFriendsList() {
+        userCon.checkFriendsList(token); }
+    @Story("Regression")
+    @Test(description = "check user FriendList")
+    public void checkLatestLineUp() {
+        userCon.checkLatestLineUp(token); }
+    @Story("Regression")
+    @Test(description = "check user currentLineup")
+    public void checkCurrentLineUp() {
+        userCon.checkCurrentLineUp(token); }
+    @Story("Regression")
+    @Test(description = "check user Session")
+    public void checkUserSession() {
+        userCon.checkUserSession(token); }
+    @Story("Regression")
+    @Test(description = "check user Wallet")
+    public void checkUserWallet() {
+        userCon.checkUserWallet(token); }
+    @Story("Regression")
+    @Test(description = "check user Profile")
+    public void checkUserProfile() {
+        userCon.checkUserProfile(token); }
 }
