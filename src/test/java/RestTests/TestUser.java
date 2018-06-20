@@ -23,7 +23,7 @@ public class TestUser {
     String password = "Qwe1156q@@";
 
     @BeforeSuite
-    public void assignToken(){
+    public  void assignToken(){
         token= userCon.signIn("coffe59@mailinator.com", "Qwe1156q@@");
         System.out.println("This is Before all method"); }
 
@@ -50,28 +50,35 @@ public class TestUser {
     @Test(description = "check Clear Line-up")
     public void checkClearLineUp() {
         userCon.checkClearLineUp(token); }
+
     @Story("Regression")
     @Test(description = "check user FriendList")
     public void checkFriendsList() {
         userCon.checkFriendsList(token); }
+
     @Story("Regression")
     @Test(description = "check user FriendList")
     public void checkLatestLineUp() {
         userCon.checkLatestLineUp(token); }
+
     @Story("Regression")
     @Test(description = "check user currentLineup")
     public void checkCurrentLineUp() {
         userCon.checkCurrentLineUp(token); }
+
     @Story("Regression")
     @Test(description = "check user Session")
     public void checkUserSession() {
         userCon.checkUserSession(token); }
+
     @Story("Regression")
     @Test(description = "check user Wallet")
     public void checkUserWallet() {
         userCon.checkUserWallet(token); }
+
     @Story("Regression")
     @Test(description = "check user Profile")
     public void checkUserProfile() {
-        userCon.checkUserProfile(token); }
+        String userId = "5ae17a306344590007cca2ef";
+        userCon.checkUserProfile(token,userId); }
 }

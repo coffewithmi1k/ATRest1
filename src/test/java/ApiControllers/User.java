@@ -6,6 +6,7 @@ import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 
 import java.io.File;
+import java.util.Collection;
 
 public class User extends ConfigControllers {
 
@@ -22,10 +23,10 @@ public class User extends ConfigControllers {
                 .queryParam("password", password).when()
                 .headers("Content-Type", "application/x-www-form-urlencoded", "Authorization", "Basic YmV0MTE6YmV0MTE=")
                 .post(urlDev + signIn).then()
-                .log().all()
+               .log().all()
                 .extract().response();
        response.then().statusCode(200)
-                .body("token_type", equalTo("bearer"));
+              .body("token_type", equalTo("bearer"));
 
         token = response.path("access_token");
         return token;
@@ -160,16 +161,22 @@ response.then().assertThat()
                .body("[0].currency", equalTo("BET_COIN"));
     }
     @Step("Get User's profile")
-    public void checkUserProfile(String token){
-        response = RestAssured.given()
+    public void checkUserProfile(String token, String userId){
+
+        response = RestAssured
+                .given()
                 .headers("Authorization", "bearer " + token,
                         "Content-Type", "application/json")
+                .param("userId",userId)
                 .when().get(urlDev+userProfile)
-                .then().log().all().extract().response();
-        response.then().assertThat()
+                .then()
+                .extract().response();
+response.prettyPrint();
+        response.then()
+                .assertThat()
                 .statusCode(200)
                 .and()
-                .body("id", equalTo(notNullValue()));
+                .body("id", equalTo(userId));
 
     }
 

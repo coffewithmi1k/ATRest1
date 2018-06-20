@@ -57,7 +57,20 @@ public class BetController extends ConfigControllers {
 
 
     }
+    @Step("Create bet")
+    public String CreateBet(String token,String bodyJson){
+        String bedId="";
 
+
+        return bedId;
+    }
+    @Step("Join bet")
+    public void JoinBet(String token, String bodyJson){
+
+
+
+
+    }
 
 
 }

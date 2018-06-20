@@ -12,29 +12,55 @@ public class TestBets {
     User userCon = new User();
     BetController betCon = new BetController();
 
+
+    String createBetFriend ="";
+
     String email1 = "coffe90@mailinator.com";
     String email2 = "coffe91@mailinator.com";
     String email3 = "coffe92@mailinator.com";
-    String password1 = "Qwe1156q@@";
-    String password2 = "Qwe1156q@@";
-    String password3 = "Qwe1156q@@";
-    String token1 = "";
-    String token2 = "";
-    String token3 = "";
+    String password = "Qwe1156q@@";
+    int betId;
     int idRandomBet;
     int groupBetId;
 
-    @Story("Random Flow checks")
-    @Test(description = "")
-public void checkbetRandomCreationJoin(){
-    token1 = userCon.signIn(email1,password1);
-    token2 = userCon.signIn(email2,password2);
-    userCon.checkConfirmLineUp(token1);
-    userCon.checkConfirmLineUp(token2);
-    idRandomBet= betCon.createBetRandom(token1);
-    betCon.joinRandomBet(token2,idRandomBet);
-}
+    @Story("Bet Flow checks")
+    @Test(description = "Create and join to Random bet")
+    public void checkbetRandomCreationJoin() {
+      String  token1 = userCon.signIn(email1, password);
+      String  token2 = userCon.signIn(email2, password);
+        userCon.checkConfirmLineUp(token1);
+        userCon.checkConfirmLineUp(token2);
+        idRandomBet = betCon.createBetRandom(token1);
+        betCon.joinRandomBet(token2, idRandomBet);
+    }
 
+    @Test
+    @Story("Create full group bet public")
+    public void checkFullPublicBet() {
+       String token = userCon.signIn("coffe100@mailinator.com", password);
+       userCon.checkConfirmLineUp(token);
+
+
+    }
+
+
+    @Test
+    @Story("Check bet Friend bet")
+    public void checkbetFriendBet() {
+
+    }
+
+    @Test
+    @Story("Check Group bet private")
+    public void checkGroupPrivateBet() {
+
+    }
+
+    @Test
+    @Story("Check Group bet public")
+    public void checkGroupPublicBet() {
+
+    }
 
 
 }
