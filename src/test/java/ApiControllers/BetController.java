@@ -14,6 +14,8 @@ import java.io.File;
 public class BetController extends ConfigControllers {
 
     File bodyCreateRandomBetJson = new File("src\\test\\Resources\\CreateRandomBet50.json");
+    File bodyCreateBetFriendJson = new File("");
+    File bodyCreateBetGroupPublicJson = new File("");
     File bodyJoinBetJson = new File("src\\test\\Resources\\JoinBet.json");
 
 
@@ -60,7 +62,6 @@ public class BetController extends ConfigControllers {
     @Step("Create bet")
     public String CreateBet(String token,String bodyJson){
         String bedId="";
-
 
         return bedId;
     }
