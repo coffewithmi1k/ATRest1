@@ -60,18 +60,34 @@ public class BetController extends ConfigControllers {
 
     }
     @Step("Create bet")
-    public String CreateBet(String token,String bodyJson){
-        String bedId="";
-
-        return bedId;
+    public String createBet(String token,String bodyJson){
+        response = RestAssured.given()
+                .headers("Authorization", "bearer " + token,
+                        "Content-Type", "application/json")
+                .body(bodyJson)
+                .when().post(urlDev+manageBets)
+                .then().extract().response();
+        response.prettyPrint();
+        response.then().assertThat().statusCode(201).and()
+                .body("commonBetRequests.currency[0]", equalTo("BET_COIN"));
+        String betId = response.path("commonBetRequests.betId[0]");
+        return betId;
     }
     @Step("Join bet")
-    public void JoinBet(String token, String bodyJson){
+    public void joinBet(String token, String bodyJson){
+        response = RestAssured.given()
+                .headers("Authorization", "bearer " + token,
+                        "Content-Type", "application/json")
+                .body(bodyJson)
+                .when().post(urlDev+manageBets)
+                .then().extract().response();
+        response.prettyPrint();
+        response.then().assertThat().statusCode(201).and()
+                .body("commonBetRequests.currency[0]", equalTo("BET_COIN"));
 
 
 
-
-    }
+}
 
 
 }
