@@ -1,0 +1,12 @@
+{
+ "commonBetRequests": [
+ 
+{
+  "currency":"BET_COIN",
+   "bet": 100,
+   "confirmBetActionType": "CREATE_HEAD_TO_HEAD",
+   "opponentId": "5af4205563445900070f58d0"
+ }
+
+]
+}

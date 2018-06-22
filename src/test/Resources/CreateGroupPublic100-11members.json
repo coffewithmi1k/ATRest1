@@ -1,0 +1,20 @@
+{
+ "commonBetRequests": [
+ 
+ {
+   "bet": 100,
+   "currency": "BET_COIN",
+   "confirmBetActionType": "CREATE_GROUP",
+   "groupBet": {
+     "groupName": "SuperGroup44",
+     "isPrivate": true,
+     "maxPeople": 10,
+     "opponentIds": [
+      
+     ],
+     "payOutMethod": "SEPARATED_POT_100_0_0"
+   }
+ }
+
+]
+}
