@@ -30,6 +30,7 @@ public class ConfigControllers {
     public String userSession ="/users/me/session";
     public String userWallet ="/users/me/wallet";
     public String userProfile ="/users/profile";
+    public String autofillPlayers ="/players/random";
 
     //Bet Controllers
     public  String manageBets = "/bets/confirm"; //for create betFriend, random, group , and join;

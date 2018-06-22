@@ -184,6 +184,21 @@ response.prettyPrint();
                 .body("id", equalTo(userId));
 
     }
+@Step("Auto fill lineup")
+    public void autoFillLineUp(String token){
+response =
+        RestAssured.given()
+                .headers("Authorization", "bearer " + token,
+                        "Content-Type", "application/json")
+        .queryParam("formation","FOUR_FOUR_TWO")
+        .when().get(urlDev+autofillPlayers)
+        .then()
+                .log().all()
+       // .assertThat().statusCode(200)
+                //.and().body("defenders[0].id",notNullValue())
+    .extract().response();
+response.prettyPrint();
 
+}
 
 }

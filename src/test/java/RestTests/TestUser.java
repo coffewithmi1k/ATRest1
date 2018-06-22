@@ -81,4 +81,10 @@ public class TestUser {
     public void checkUserProfile() {
         String userId = "5ae17a306344590007cca2ef";
         userCon.checkUserProfile(token,userId); }
+
+    @Story("Regression")
+    @Test(description = "check Auto fill line-up")
+    public void checkAutoFillLineUp() {
+    userCon.autoFillLineUp(token);
+    }
 }
