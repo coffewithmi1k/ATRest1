@@ -23,11 +23,11 @@ public class User extends ConfigControllers {
                 .queryParam("password", password).when()
                 .headers("Content-Type", "application/x-www-form-urlencoded", "Authorization", "Basic YmV0MTE6YmV0MTE=")
                 .post(urlDev + signIn).then()
-               .log().all()
+              .log().all()
                 .extract().response();
        response.then().statusCode(200)
               .body("token_type", equalTo("bearer"));
-
+       System.out.println(email+" is logged successfully");
         token = response.path("access_token");
         return token;
 
@@ -52,7 +52,9 @@ public class User extends ConfigControllers {
                 .headers("Authorization", "bearer " + myToken,
                         "Content-Type", "application/json")
                 .body(LeicesterCityFormationJson).when().post(urlDev + confirmLineUp)
-                .then().log().all().extract().response();
+                .then()
+                .log().all()
+                .extract().response();
 
         if(response.statusCode()==409){
             response = RestAssured.given()
@@ -60,7 +62,10 @@ public class User extends ConfigControllers {
                     .headers("Authorization", "bearer " + myToken,
                             "Content-Type", "application/json")
                     .body(manchesterCityFormationJson).when().post(urlDev + confirmLineUp)
-                    .then().log().all().extract().response();
+                    .then()
+                    .log().all()
+                    .extract().response();
+            System.out.println("LineUp confirmed successfully");
         }
         response.then().statusCode(200).body("betCount", equalTo(0));
     }
