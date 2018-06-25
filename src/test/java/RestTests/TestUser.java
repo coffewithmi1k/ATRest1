@@ -24,7 +24,7 @@ public class TestUser {
 
     @BeforeSuite
     public  void assignToken(){
-        token= userCon.signIn("coffe59@mailinator.com", "Qwe1156q@@");
+        token= userCon.signIn("coffe62@mailinator.com", "Qwe1156q@@");
         System.out.println("This is Before all method"); }
 
     @Story("Regression")

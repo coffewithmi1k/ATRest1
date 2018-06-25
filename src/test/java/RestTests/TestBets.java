@@ -2,12 +2,9 @@ package RestTests;
 
 import ApiControllers.BetController;
 import ApiControllers.User;
-import ResourcesJsons.BetJsons;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.testng.annotations.Test;
-
-import java.util.Random;
 
 @Epic("Bet Scenarios")
 public class TestBets {
